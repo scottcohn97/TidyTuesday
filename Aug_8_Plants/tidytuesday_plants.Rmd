@@ -1,0 +1,32 @@
+---
+title: "Plants"
+output: html_notebook
+---
+
+
+```{r lib, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidytext)
+```
+
+
+```{r data}
+# See gitpage for clean script 
+
+plants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+
+actions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv')
+
+threats <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv')
+```
+
+# Viz
+
+```{r}
+plants %>% 
+  ggplot() +
+  geom_histogram(aes(x = country), stat = "count")
+```
+
+
+
